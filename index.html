@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khan Shop</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker registered:', reg))
+        .catch(err => console.error('Service Worker registration failed:', err));
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="header-wrapper">
+      <img src="assets/logo.png" alt="Logo" class="logo-img" />
+      <span class="logo-text">Khan Shop</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Welcome to Khan Shop</h1>
+      <p>Discover the latest trends and amazing deals!</p>
+      <a href="products.html" class="btn">Shop Now</a>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-page">
+      <h2>Stationery Products</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="assets/stationery/notebooks.jpeg" alt="Notebook" />
+          <h3>Notebook</h3>
+          <p>$599</p>
+          <button onclick="addToCart('Notebook', 599)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="assets/stationery/pens.jpg" alt="Pen" />
+          <h3>Gel Pen (Pack of 5)</h3>
+          <p>$349</p>
+          <button onclick="addToCart('Gel Pen', 349)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="assets/stationery/markers.jpeg" alt="Highlighter" />
+          <h3>Highlighter Set</h3>
+          <p>$499</p>
+          <button onclick="addToCart('Highlighter Set', 499)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="assets/stationery/sticky-notes.jpeg" alt="Sticky Notes" />
+          <h3>Sticky Notes</h3>
+          <p>$299</p>
+          <button onclick="addToCart('Sticky Notes', 299)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Khan Shop. All rights reserved.</p>
+  </footer>
+</body>
+</html>
